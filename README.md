@@ -1,8 +1,9 @@
-# react-boilerplate
+# redux-boilerplate
 
-Simple react starter with the following config:
+Simple React + Redux starter with the following config:
 
 - React, ReactDOM
+- Redux, React-Redux
 - Webpack 3
 - Babel with es2015 and react presets
 - Bootstrap (css only, loaded from a cdn in `index.html`)
