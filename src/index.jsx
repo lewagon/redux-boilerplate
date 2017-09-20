@@ -6,16 +6,13 @@ import { createStore } from 'redux';
 import reducers from './reducers';
 
 // internal modules
+import App from './components/app';
 import '../assets/stylesheets/application.scss';
-
-
-// A simple example of a functional component
-const Hello = props => <h1>Hello, {props.name}</h1>;
 
 // render an instance of the component in the DOM
 ReactDOM.render(
   <Provider store={createStore(reducers)}>
-    <Hello name="Boris" />
+    <App />
   </Provider>,
   document.querySelector('.container')
 );
