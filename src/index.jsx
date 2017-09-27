@@ -2,21 +2,34 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore, combineReducers } from 'redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
 
-// internal modules
-import App from './components/app';
 import '../assets/stylesheets/application.scss';
+import App from './components/app';
+
+import dumbReducer from './reducers/dumb_reducer'
 
 // State and reducers
+const initialState = {
+  // TODO: Define your Redux state and remove the `dumb` key.
+  dumb: "Click me"
+};
 const reducers = combineReducers({
-  state: (state = {}, action) => state
+  // TODO: create and import a reducer for each redux state key. Remove dumb.
+  dumb: dumbReducer
 });
 
-// render an instance of the component in the DOM
+const middlewares = applyMiddleware(
+  // TODO: import and list middlewares you want to use.
+  // e.g.: logger, ReduxPromise, etc.
+);
+
+const store = createStore(reducers, initialState, middlewares);
+
 ReactDOM.render(
-  <Provider store={createStore(reducers)}>
+  <Provider store={store}>
     <App />
   </Provider>,
   document.querySelector('.container')
 );
+
