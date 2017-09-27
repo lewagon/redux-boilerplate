@@ -10,7 +10,7 @@ import '../assets/stylesheets/application.scss';
 
 // State and reducers
 const reducers = combineReducers({
-  state: (state = {}, action) => state
+  changeMe: (state = null, action) => state
 });
 
 // render an instance of the component in the DOM
